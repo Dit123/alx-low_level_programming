@@ -1,1 +1,2 @@
-hello world
+#!bin/bash
+c level coding
