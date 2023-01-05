@@ -38,7 +38,7 @@ int _sqrt_recursion(int n)
 
 	else
 	{
-		return (evaluate(i, n));
+		return (_evaluate(i, n));
 	}
 }
 
