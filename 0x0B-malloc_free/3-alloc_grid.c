@@ -1,42 +1,39 @@
-#include "main.h"
+#include <stdlib.h>
+#include "holberton.h"
 
 /**
- * alloc_grid - allocates a grid, make space and free space
- * @width: takes in width of grid
- * @height: height of grid
- * Return: grid with freed spaces
+ * alloc_grid - returns a pointer to **
+ * @width: the width of the matrix
+ * @height: the height of the matrix
+ * Return: the pointer of the matrix or NULL on fail
  */
 
 int **alloc_grid(int width, int height)
 {
-	int **grid;
-	int i, j;
+	int **grid = NULL;
+	int counter;
+	int scounter;
+
 
 	if (width <= 0 || height <= 0)
-	{
 		return (NULL);
-	}
-
-	grid = malloc(sizeof(int *) * height);
-
-	if (grid == NULL)
+	grid = malloc(height * (sizeof(int *)));
+	for (counter = 0; counter < height; counter++)
 	{
-		return (NULL);
-	}
-
-	for (i = 0; i < height; i++)
-	{
-		grid[i] = malloc(sizeof(int) * width);
-		if (grid[i] == NULL)
+		grid[counter] = malloc(width * (sizeof(int)));
+		for (scounter = 0; scounter < width; scounter++)
 		{
-			for (i = i - 1; i >= 0; i--)
+			if (grid[counter] == NULL)
 			{
+				for (counter = 0; counter < height; counter++)
+				{
+					free(grid[counter]);
+				}
 				free(grid);
 				return (NULL);
 			}
+			grid[counter][scounter] = 0;
 		}
-		for (i = 0; j < width; j++)
-			grid[i][j] = 0;
-		return (grid);
 	}
+	return (grid);
 }
