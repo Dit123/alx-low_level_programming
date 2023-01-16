@@ -5,7 +5,7 @@
  * struct dog - struct dog
  * @name: name
  * @age: age
- * @Owner: Owner
+ * @owner: owner
  * Description: This struct is for dog
  */
 
@@ -13,7 +13,7 @@ struct dog
 {
 	char *name;
 	float age;
-	char *Owner;
+	char *owner;
 };
 
 typedef struct dog dog_t;
