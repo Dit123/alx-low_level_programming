@@ -1,13 +1,13 @@
 #include "3-calc.h"
 
 /**
- * main - program that performs simple operations
+ * main - program that perfroms simple operations
  * @argc: number of arguments
  * @argv: array of arguments
  *
- * Return: Always 0 (success)
+ * Return: Always 0 (Success)
  */
-int main(int argc, int *argv[])
+int main(int argc, char *argv[])
 {
 	int arg1, arg2, result;
 	char o;
@@ -20,7 +20,7 @@ int main(int argc, int *argv[])
 	}
 
 	arg1 = atoi(argv[1]);
-	arg2 = atoi(argv[2]);
+	arg2 = atoi(argv[3]);
 
 	func = get_op_func(argv[2]);
 
